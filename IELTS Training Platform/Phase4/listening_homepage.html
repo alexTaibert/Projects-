@@ -1,0 +1,157 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listeningStyle.css">
+    <title>IELTS Training Platform</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        <main>
+            <h1>IELTS Listening Practice Test</h1>
+            <div class="recommended-activities">
+                    <div class="red-line"></div>
+                </div>
+
+                <div class="intruction">
+                    <p>The IELTS Listening examination is expected to last around 30 minutes, 
+					during which you will be given an additional 10 minutes to transfer your answers onto the answer sheet.</p> 
+					<br>
+					
+					<p>It is advisable that you attentively listen the instructions provided for each section of the test. 
+						You are expected to respond to all 40 questions, with each question carrying one mark. It is crucial to listen 
+						attentively to the instructions provided for each segment of the paper.</p>
+					<br>
+					
+					<p>In each segment of the test, there will be time for you to look through the questions 
+						and time for you to check your answers.Upon finishing all four components of the Listening test, 
+						a period of ten minutes will be provided for you to transcribe your answers onto a distinct answer sheet.</p>      
+					<br>
+					
+					<p>Test takers are advised not to open the question paper until explicitly instructed to do so. Please ensure that your name 
+					and candidate number are promptly written in the designated spaces at the top of this page.</p>      
+                
+					<h1>Useful tips for the IELTS listening examination</h1>	
+						<ul>
+							<li>Before the recording begins for any section, do read all the questions carefully. 
+								This will help follow the recordings and identify the answers easily.</li>
+							<li>At times, there will be a list of options to make a pick from. It is not necessary 
+								that the answers will be in the order you hear them, they may could also be listed alphabetically.</li>
+							<li>Do note the word limits for each section. If an instruction says, 
+								‘Write no more than two words’, stick to it.</li>
+							<li>Be attentive and look out for the key words or synonyms</li>
+							<li>while you are listening, write your answers on the question paper</li>
+							<li>while listening to a recording, you can keep crossing out the options that do not fit. 
+								It makes it easier to find the right option.</li>
+							<li>If you face trouble in answering any question, leave it and move on.</li>					
+						</ul>		
+				</div>
+				
+				
+                <div class="recommended-activities">
+                        Practice
+                        <div class="red-line"></div>
+                    </div>
+                <div class="article-row">
+                        <a href="listening_prac1.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 1</div>
+                                
+                                <div class="article-info">
+                                    
+									<p>Listening Test 1</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="listening_prac2.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 2</div>
+                                
+                                <div class="article-info">
+                                    
+									<p>Listening Test 2</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="listening_prac3.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 3</div>
+                                <div class="article-info">
+                                    
+									<p>Listening Test 3</p>
+                                </div>
+                            </div>
+                        </a>
+						
+						  <a href="listening_prac4.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 4</div>
+                                <div class="article-info">
+                                    
+									<p>Listening Test 4</p>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+						
+				
+                <div class="recommended-activities">
+                        <div class="red-line"></div>
+                    </div>
+        </main>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest IELTS news and preparation tips.</p>
+            <form action="subscribe.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 IELTS Training Platform</p>
+        </footer>
+        
+        <!-- Filter menu (initially hidden) -->
+        <div class="filter-menu" id="filterMenu">
+            <button class="close-button" onclick="closeFilterMenu()">Close</button>
+            <h2>Filter Content</h2>
+            <label>
+                <input type="checkbox" value="beginner" class="filter-checkbox"> Beginner
+            </label>
+            <label>
+                <input type="checkbox" value="intermediate" class="filter-checkbox"> Intermediate
+            </label>
+            <label>
+                <input type="checkbox" value="advanced" class="filter-checkbox"> Advanced
+            </label>
+        </div>
+        
+<script src="main.js"></script>
+        
+</body>
+</html>
+

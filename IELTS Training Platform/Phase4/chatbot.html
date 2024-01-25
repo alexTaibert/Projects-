@@ -1,0 +1,88 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainpage.css"> <!-- Add a link to the new CSS file -->
+    <title>IELTS Speaking Exercise</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="mainPage.html">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the IELTS Speaking Exercise</h1>
+        <p>Practice your speaking with the chatbot! Type the greetings or record your voice</p>
+        <div class="chatbot">
+            <div class="chatbox">
+                <div class="chatlog" id="chatlog">
+                    <!-- Chat log will be displayed here -->
+                </div>
+                <input type="text" id="userInput" placeholder="Type here...">
+            </div>
+        </div>
+        
+        <button id="voiceButton">Start Voice Recognition</button>
+
+            <script>
+                // Function to handle user input and chatbot responses
+                function handleUserInput() {
+                    // Your existing code for text input
+
+                    // Clear the user input field
+                    document.getElementById('userInput').value = '';
+                }
+
+                // Function to start voice recognition
+                function startVoiceRecognition() {
+                    const recognition = new webkitSpeechRecognition() || SpeechRecognition();
+                    recognition.lang = 'en-US';
+
+                    recognition.onresult = function(event) {
+                        const userVoiceInput = event.results[0][0].transcript;
+                        document.getElementById('userInput').value = userVoiceInput;
+                        handleUserInput();
+                    };
+
+                    recognition.start();
+                }
+
+                // Add event listener to handle user input
+                document.getElementById('userInput').addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        handleUserInput();
+                    }
+                });
+
+                // Add event listener to start voice recognition when the button is clicked
+                document.getElementById('voiceButton').addEventListener('click', function () {
+                    startVoiceRecognition();
+                });
+            </script>
+        </body>
+        </html>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 IELTS Training Platform</p>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
+

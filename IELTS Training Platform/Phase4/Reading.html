@@ -1,0 +1,160 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listeningStyle.css">
+    <title>IELTS Training Platform</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        <main>
+            <h1>IELTS Reading Practice Test</h1>
+            <div class="recommended-activities">
+                    <div class="red-line"></div>
+                </div>
+
+                <div class="intruction">
+					<h2>Getting Familiar with the IELTS Reading Test (Format & Questions)</h2>
+                    <p>The question types used in the IELTS Reading test evaluate a variety of reading skills. These include:</p> 
+					<br>
+						<ul>
+							<li>skimming - reading for gist and to understand the main idea</li>
+							<li>scanning - reading quickly to locate a specific piece of information</li>
+							<li>reading for detail – reading to understand a logical argument, opinions, attitudes, and writer’s purpose.</li>				
+						</ul>
+					<br>
+					<p>You will get similar question types in both the IELTS General Training and Academic tests; however, the topics of the reading texts will be different.</p>
+					<p>You can expect a variety of question types in the General and Academic Reading tests such as:</p>
+					<br>
+						<ul>
+							<li>Multiple choice</li>
+							<li>Identifying information</li>
+							<li>Identifying a writer's views/claims</li>
+							<li>Matching information</li>
+							<li>Matching headings</li>
+							<li>Matching features</li>
+							<li>Matching sentence endings</li>
+							<li>Sentence completion</li>
+							<li>Summary, note, table, flow-chart completion</li>
+							<li>Diagram label completion</li>
+							<li>Short-answer questions</li>
+						</ul>
+					<br>
+					<p>To excel in the IELTS Reading test, effective time management is crucial, as you're allocated just 60 minutes to complete 40 questions. It's recommended to allocate roughly 20 minutes
+					to each of the three sections. Implement various strategies such as reading the questions before diving into the text, skimming through the passage, focusing on introduction and conclusion
+					sections, and identifying key words. Remember to answer every question and double-check your responses. For specific question types like matching headings and True/False/Not Given, utilize
+					time-saving techniques such as eliminating options or taking notes. Consistent practice is the key to success, and you can enhance your preparedness by utilizing official IELTS preparation materials, 
+					including practice exams. Familiarizing yourself with the question types for both IELTS General Training Reading and IELTS Academic tests is essential, as it gives you an idea of the challenges 
+					you'll face on the actual test. Furthermore, consider taking the IELTS Progress Check, which provides insight into your IELTS test preparation progress. The official online practice test for 
+					IELTS Academic and General Training follows the same format as the real IELTS test, and there are several new practice exams available for both types. By following these tips, checking question types
+					before the actual test, taking the IELTS Progress Check, and practicing consistently, you'll be well-prepared to excel in the IELTS Reading test and improve your band score.</p>
+				</div>
+				
+				
+                <div class="recommended-activities">
+                        Practice
+                        <div class="red-line"></div>
+                    </div>
+                <div class="article-row">
+                        <a href="reading1.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 1</div>
+                                
+                                <div class="article-info">
+                                    
+									<p>Reading Test 1</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="reading2.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 2</div>
+                                
+                                <div class="article-info">
+                                    
+									<p>Reading Test 2</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="reading3.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 3</div>
+                                <div class="article-info">
+                                    
+									<p>Reading Test 3</p>
+                                </div>
+                            </div>
+                        </a>
+						
+						  <a href="reading4.html">
+                            <div class="article-rectangle">
+                                <div class="red-line">Practice 4</div>
+                                <div class="article-info">
+                                    
+									<p>Reading Test 4</p>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+						
+				
+                <div class="recommended-activities">
+                        <div class="red-line"></div>
+                    </div>
+        </main>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest IELTS news and preparation tips.</p>
+            <form action="subscribe.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 IELTS Training Platform</p>
+        </footer>
+        
+        <!-- Filter menu (initially hidden) -->
+        <div class="filter-menu" id="filterMenu">
+            <button class="close-button" onclick="closeFilterMenu()">Close</button>
+            <h2>Filter Content</h2>
+            <label>
+                <input type="checkbox" value="beginner" class="filter-checkbox"> Beginner
+            </label>
+            <label>
+                <input type="checkbox" value="intermediate" class="filter-checkbox"> Intermediate
+            </label>
+            <label>
+                <input type="checkbox" value="advanced" class="filter-checkbox"> Advanced
+            </label>
+        </div>
+        
+<script src="main.js"></script>
+        
+</body>
+</html>
+

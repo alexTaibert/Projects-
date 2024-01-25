@@ -1,0 +1,187 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listeningStyle.css">
+	<!--<script src="listeningScript.js"></script> -->
+	
+    <title>IELTS Training Platform</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        <main>
+		
+            <h1>IELTS Listening Test 1</h1>
+            <div class="recommended-activities">
+                    
+                    <div class="red-line"></div>
+                </div>
+            <p>This is the first section of IELTS Listening test #5. <br>
+			<br> The Listening module consists of 4 sections and takes 40 minutes. Listen to the audio and answer the questions. <br>
+			<br> As you finish, press 'check' and proceed to the next section. </p>
+
+                
+                <div class="recommended-activities">
+                        Part One
+                        <div class="red-line"></div>						
+                </div>
+				
+				<audio controls>
+							<source src="test1_1.ogg" type="audio/ogg">
+							<source src="test1_1.mp3" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio>
+						
+			<h2> Questions 1-5 </h2>
+
+			<p> Complete the information below. Write <b>NO MORE THAN ONE WORD OR A NUMBER</b> for each answer. </p>
+		
+		<div class="center-table">	
+			<table border="1">
+				<tr>
+					<th colspan="2">Apartment for rent</th>
+				  </tr>
+				  <tr>
+					<td>Street</td>
+					<td><u>Bridge</u> street</td>
+	
+				  </tr>
+				  <tr>
+					<td>Street No.</td>
+					<td><b>(1)</b> 
+						<input type="text" name="q1" id="answer1">
+						</td>
+					
+				  </tr>
+				  <tr>
+					<td>Included utilities</td>
+					<td>Gas, heat, water, <b>(2)</b> 
+						<input type="text" name="q2" id="answer2">
+						, phone</td>
+					
+				  </tr>
+				  <tr>
+					<td>Not included utilities</td>
+					<td><b>(3)</b> 
+						<input type="text" name="q3" id="answer3">
+						</td>
+					
+				  </tr>
+				  <tr>
+					<td>Public transport</td>
+					<td>Underground, <b>(4)</b> 
+						<input type="text" name="q4" id="answer4">
+						</td>
+					
+				  </tr>
+				  <tr>
+					<td>Tenant’s name</td>
+					<td>John <b>(4)</b>
+						<input type="text" name="q5" id="answer5"> </td> 
+					
+				  </tr>
+				</table>
+		</div>
+				<h2> Questions 6-8 </h2>
+
+				<p>Choose <b>THREE </b>letters, <b>A-F. </b><br><br> Which <b>THREE</b> things should the caller bring to the meeting? </p>
+				
+				<div class="form">	
+				
+				A.<input type="checkbox" name="QTwo" id="correctA">Driving license<br>				
+				B.<input type="checkbox" name="QTwo" id="correctB">Passport<br>
+				C.<input type="checkbox" name="QTwo" id="correctC">Tax bill<br>
+				D.<input type="checkbox" name="QTwo" id="correctD">Employment contract<br>
+				E.<input type="checkbox" name="QTwo" id="correctE">Reference from a friend or colleague<br>
+				F.<input type="checkbox" name="QTwo" id="correctF">Reference from an employer
+						
+			</div>
+				
+				
+				<h2> Questions 9-10 </h2>
+
+				<p>Choose the correct letters,<b> A</b>, <b>B</b>, or <b>C</b>. 
+								
+				<br><br><b>9.</b> What time do the caller and apartment manager decide to meet?
+				</p>
+				
+				
+			<div class="form">
+							
+				A.<input type="radio" name="QOne">5:30 PM <br>
+				B.<input type="radio" name="QOne" id="correct1">6:00 PM<br>
+				C.<input type="radio" name="QOne">6:30 PM <br>
+			</div><br>	
+							
+				<p><b>10. </b>Where do they decide to meet?</p>
+				
+			<div class="form">	
+							
+				A.<input type="radio" name="QTwo">Near the manager’s apartment<br>
+				B.<input type="radio" name="QTwo" id="correct2">At the caller’s future apartment<br>
+				C.<input type="radio" name="QTwo">At the office
+						
+			</div>	
+
+			<button type="button" onclick='document.getElementById("demo").innerHTML = "Your Score" + result()'>Submit Quiz</button>
+			
+			<p id="scoreDisplay"></p>
+
+
+        </main>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest IELTS news and preparation tips.</p>
+            <form action="subscribe.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 IELTS Training Platform</p>
+        </footer>
+        
+        <!-- Filter menu (initially hidden) -->
+        <div class="filter-menu" id="filterMenu">
+            <button class="close-button" onclick="closeFilterMenu()">Close</button>
+            <h2>Filter Content</h2>
+            <label>
+                <input type="checkbox" value="beginner" class="filter-checkbox"> Beginner
+            </label>
+            <label>
+                <input type="checkbox" value="intermediate" class="filter-checkbox"> Intermediate
+            </label>
+            <label>
+                <input type="checkbox" value="advanced" class="filter-checkbox"> Advanced
+            </label>
+        </div>
+        
+<script src="main.js"></script>
+<script src="listeningScript.js"> </script>
+        
+</body>
+</html>
+

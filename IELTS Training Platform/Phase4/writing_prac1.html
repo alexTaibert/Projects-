@@ -1,0 +1,99 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listeningStyle.css">
+	
+    <title>IELTS Training Platform</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+        <main>
+		
+            <h1>IELTS Writing Part 1</h1>
+            <div class="recommended-activities">
+                    
+                    <div class="red-line"></div>
+                </div>
+				
+		
+            <p>You should spend about 20 minutes on this task.</p><br>
+			<p><b>The diagrams below show the changes that have taken place at 
+				West park Secondary School since its construction in 1950.</b></p><br>
+			<p>Summarize the information by selecting and reporting the main features 
+				and make comparisons where relevant.</p><br>
+			<p style="color:red;"><b>Write at least 150 words.</b></p><br>
+
+    		
+				
+			<img src="writing_img.jpg" alt="question_img" style="width:40%"><br>  
+			
+			
+			<br><p>Write your answer below </p><br>
+			<div class="text-box">
+				<textarea id="user-text" rows="20" cols="150" placeholder="Write at least 150 words..."></textarea>
+			</div>
+			
+			<br>			
+			<button type="button" onclick='checkWordCount()'>Submit </button>
+			
+			<p id="feedback"></p>
+
+
+        </main>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest IELTS news and preparation tips.</p>
+            <form action="subscribe.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 IELTS Training Platform</p>
+        </footer>
+        
+        <!-- Filter menu (initially hidden) -->
+        <div class="filter-menu" id="filterMenu">
+            <button class="close-button" onclick="closeFilterMenu()">Close</button>
+            <h2>Filter Content</h2>
+            <label>
+                <input type="checkbox" value="beginner" class="filter-checkbox"> Beginner
+            </label>
+            <label>
+                <input type="checkbox" value="intermediate" class="filter-checkbox"> Intermediate
+            </label>
+            <label>
+                <input type="checkbox" value="advanced" class="filter-checkbox"> Advanced
+            </label>
+        </div>
+        
+<script src="main.js"></script>
+<script src="writingScript.js"> </script>
+        
+</body>
+</html>
+

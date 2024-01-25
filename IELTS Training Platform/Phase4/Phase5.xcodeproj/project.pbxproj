@@ -1,0 +1,84 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		BD3F22E52AF1A1CA00351E75 /* mainPage.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mainPage.html; sourceTree = "<group>"; };
+		BD3F22E62AF1A2E100351E75 /* mainpage.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = mainpage.css; sourceTree = "<group>"; };
+		BDABF8BA2AFAF1FD00F29CA0 /* chatbot.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = chatbot.js; sourceTree = "<group>"; };
+		BDABF8BB2AFB06C100F29CA0 /* chatbot.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chatbot.html; sourceTree = "<group>"; };
+		BDABF8BD2AFB5A7200F29CA0 /* subpage.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = subpage.html; sourceTree = "<group>"; };
+		BDDADF0E2AF1BDF40099AD43 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		BD3F22DE2AF1A16D00351E75 = {
+			isa = PBXGroup;
+			children = (
+				BDABF8BD2AFB5A7200F29CA0 /* subpage.html */,
+				BDABF8BB2AFB06C100F29CA0 /* chatbot.html */,
+				BDABF8BA2AFAF1FD00F29CA0 /* chatbot.js */,
+				BDDADF0E2AF1BDF40099AD43 /* main.js */,
+				BD3F22E62AF1A2E100351E75 /* mainpage.css */,
+				BD3F22E52AF1A1CA00351E75 /* mainPage.html */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		BD3F22DF2AF1A16D00351E75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = BD3F22E22AF1A16D00351E75 /* Build configuration list for PBXProject "Phase5" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD3F22DE2AF1A16D00351E75;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		BD3F22E32AF1A16D00351E75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BD3F22E42AF1A16D00351E75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD3F22E22AF1A16D00351E75 /* Build configuration list for PBXProject "Phase5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3F22E32AF1A16D00351E75 /* Debug */,
+				BD3F22E42AF1A16D00351E75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD3F22DF2AF1A16D00351E75 /* Project object */;
+}

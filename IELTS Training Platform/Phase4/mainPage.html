@@ -1,0 +1,150 @@
+<!-- COMP 3450:<Zarin, Tazrian, Alex>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainpage.css">
+    <title>IELTS Training Platform</title>
+</head>
+<body>
+    <header>
+        <div class="hamburger-button" onclick="toggleFilterMenu(this)">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        <h1><a>IELTS Master</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Exercises</a></li>
+                <li><a href="#">Comprehension Tests</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img src="students.png" alt="IELTS Training Image">
+        <main>
+            <h1>Welcome to the IELTS Training Platform</h1>
+            <div class="recommended-activities">
+                    Recommended Activities
+                    <div class="red-line"></div>
+                </div>
+            <div class="exercise-row">
+                    <div class="exercise-rectangle">
+                        <div class="red-line"></div>
+                        <div class="exercise-info">
+                            <h2>Exercise Set 1</h2>
+                            <p>Improve your listening skills.</p>
+                            <a href="listening_homepage.html">Start Exercise</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-rectangle">
+                        <div class="red-line"></div>
+                        <div class="exercise-info">
+                            <h2>Exercise Set 2</h2>
+                            <p>Enhance your reading abilities.</p>
+                            <a href="Reading.html">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-row">
+                    <div class="exercise-rectangle">
+                        <div class="red-line"></div>
+                        <div class="exercise-info">
+                            <h2>Exercise Set 3</h2>
+                            <p>Practice your writing skills.</p>
+                            <a href="writing_homepage.html">Start Exercise</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-rectangle">
+                        <div class="red-line"></div>
+                        <div class="exercise-info">
+                            <h2>Exercise Set 4</h2>
+                            <p>Test your speaking proficiency.</p>
+                            <a href="chatbot.html">Start Exercise</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recommended-activities">
+                        Articles
+                        <div class="red-line"></div>
+                    </div>
+                <div class="article-row">
+                       
+                            <div class="article-rectangle">
+                                <div class="red-line"><a href="https://www.topuniversities.com/where-to-study/europe/united-kingdom/top-10-universities-london" style="color:white; text-decoration:none;">Universities of London</a></div>
+                                <img src="London.jpeg" alt="Article 1" class="article-image">
+                                <div class="article-info">
+                                    <!-- Add content for the first article -->
+                                </div>
+                            </div>
+                       
+
+                        
+                            <div class="article-rectangle">
+                                <div class="red-line"><a href="https://www.topuniversities.com/where-to-study/north-america/united-states/top-universities-new-york-city" style="color:white; text-decoration:none;">Universities of New-York</a></div>
+                                <img src="NewYork.jpeg" alt="Article 1" class="article-image">
+                                <div class="article-info">
+                                    <!-- Add content for the second article -->
+                                </div>
+                            </div>
+                        
+                       
+                            <div class="article-rectangle">
+                                <div class="red-line"><a href="https://www.ox.ac.uk/about/organisation/history" style="color:white; text-decoration:none;" >History of Oxford</a></div>
+                                <img src="Oxford.jpg" alt="Article 1" class="article-image">
+                                <div class="article-info">
+                                    <!-- Add content for the second article -->
+                                </div>
+                            </div>
+                        
+                        </div>
+                <div class="recommended-activities">
+                        <div class="red-line"></div>
+                    </div>
+        </main>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest IELTS news and preparation tips.</p>
+            <form action="subpage.html" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <a href="subpage.html">
+                    <button type="submit">Subscribe</button>
+                </a>
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 IELTS Training Platform</p>
+        </footer>
+        
+        
+        <!-- Filter menu (initially hidden) -->
+        <div class="filter-menu" id="filterMenu">
+            <button class="close-button" onclick="closeFilterMenu()">Close</button>
+            <h2>Filter Content</h2>
+            <label>
+                <input type="checkbox" value="beginner" class="filter-checkbox"> Beginner
+            </label>
+            <label>
+                <input type="checkbox" value="intermediate" class="filter-checkbox"> Intermediate
+            </label>
+            <label>
+                <input type="checkbox" value="advanced" class="filter-checkbox"> Advanced
+            </label>
+        </div>
+        
+<script src="main.js"></script>
+        
+</body>
+</html>
+
