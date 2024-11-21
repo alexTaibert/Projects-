@@ -1,0 +1,445 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotic Hand Control</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+    .control-panel {
+      text-align: center;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .status {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-panel">
+    <h1>Robotic Hand Control</h1>
+
+    <button onclick="toggleFinger('thumb')">Toggle Thumb</button>
+    <button onclick="toggleFinger('index')">Toggle Index Finger</button>
+    <button onclick="toggleFinger('middle')">Toggle Middle Finger</button>
+    <button onclick="toggleFinger('ring')">Toggle Ring Finger</button>
+    <button onclick="toggleFinger('pinky')">Toggle Pinky Finger</button>
+
+    <div class="status" id="status">Current Finger States: Loading...</div>
+  </div>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBl0BKmGXGgPqsloA-C3N_DrrI9F1K9GF8",
+      authDomain: "iotproject-9e92f.firebaseapp.com",
+      databaseURL: "https://iotproject-9e92f-default-rtdb.firebaseio.com",
+      projectId: "iotproject-9e92f",
+      storageBucket: "iotproject-9e92f.appspot.com",
+      messagingSenderId: "528899723814",
+      appId: "1:528899723814:web:e95b3b041f0bbf3e25cce7"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Reference to fingers in Firebase
+    const fingersRef = database.ref('fingers');
+
+    // Current states of fingers, initialized to 0 (down)
+    let fingerStates = { thumb: 0, index: 0, middle: 0, ring: 0, pinky: 0 };
+
+    // Update the HTML status display
+    function updateStatus() {
+      document.getElementById('status').innerText = `Current Finger States: 
+        Thumb: ${fingerStates.thumb}, 
+        Index: ${fingerStates.index}, 
+        Middle: ${fingerStates.middle}, 
+        Ring: ${fingerStates.ring}, 
+        Pinky: ${fingerStates.pinky}`;
+    }
+
+    // Toggle a finger's state and update Firebase
+    function toggleFinger(finger) {
+      fingerStates[finger] = fingerStates[finger] === 0 ? 1 : 0;
+      fingersRef.set(fingerStates); // Update Firebase with new finger states
+      updateStatus();               // Update the HTML display
+    }
+
+    // Listen for changes to finger states in Firebase
+    fingersRef.on('value', (snapshot) => {
+      fingerStates = snapshot.val() || fingerStates;
+      updateStatus();
+    });
+
+    // Initialize the status display on page load
+    updateStatus();
+  </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Robotic Hand</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .button-container {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Control Robotic Hand</h1>
+
+  <div class="button-container">
+    <button id="indexBtn">Index Finger</button>
+    <button id="middleBtn">Middle Finger</button>
+    <button id="pinkyBtn">Pinky Finger</button>
+    <button id="ringBtn">Ring Finger</button>
+    <button id="thumbBtn">Thumb Finger</button>
+  </div>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBl0BKmGXGgPqsloA-C3N_DrrI9F1K9GF8",
+      authDomain: "iotproject-9e92f.firebaseapp.com",
+      databaseURL: "https://iotproject-9e92f-default-rtdb.firebaseio.com",
+      projectId: "iotproject-9e92f",
+      storageBucket: "iotproject-9e92f.appspot.com",
+      messagingSenderId: "528899723814",
+      appId: "1:528899723814:web:e95b3b041f0bbf3e25cce7"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Set initial state for each finger
+    let fingerState = {
+      index: 0,
+      middle: 1,
+      pinky: 1,
+      ring: 1,
+      thumb: 1,
+      timestamp: Date.now()
+    };
+
+    // Update Firebase with the current finger states
+    function updateFirebase() {
+      database.ref('fingers').set(fingerState)
+        .then(() => {
+          console.log('Finger states updated successfully!');
+        })
+        .catch((error) => {
+          console.error('Error updating Firebase:', error);
+        });
+    }
+
+    // Function to toggle the finger state
+    function toggleFinger(finger) {
+      fingerState[finger] = fingerState[finger] === 1 ? 0 : 1;  // Toggle between 1 and 0
+      fingerState.timestamp = Date.now();  // Update the timestamp
+      updateFirebase();  // Update Firebase with new state
+    }
+
+    // Add event listeners for each button
+    document.getElementById("indexBtn").addEventListener("click", () => toggleFinger("index"));
+    document.getElementById("middleBtn").addEventListener("click", () => toggleFinger("middle"));
+    document.getElementById("pinkyBtn").addEventListener("click", () => toggleFinger("pinky"));
+    document.getElementById("ringBtn").addEventListener("click", () => toggleFinger("ring"));
+    document.getElementById("thumbBtn").addEventListener("click", () => toggleFinger("thumb"));
+  </script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Robotic Hand</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .button-container {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Control Robotic Hand</h1>
+
+  <div class="button-container">
+    <button id="indexBtn">Index Finger: Off</button>
+    <button id="middleBtn">Middle Finger: Off</button>
+    <button id="pinkyBtn">Pinky Finger: Off</button>
+    <button id="ringBtn">Ring Finger: Off</button>
+    <button id="thumbBtn">Thumb Finger: Off</button>
+  </div>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBl0BKmGXGgPqsloA-C3N_DrrI9F1K9GF8",
+      authDomain: "iotproject-9e92f.firebaseapp.com",
+      databaseURL: "https://iotproject-9e92f-default-rtdb.firebaseio.com",
+      projectId: "iotproject-9e92f",
+      storageBucket: "iotproject-9e92f.appspot.com",
+      messagingSenderId: "528899723814",
+      appId: "1:528899723814:web:e95b3b041f0bbf3e25cce7"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Set initial state for each finger
+    let fingerState = {
+      index: 0,
+      middle: 0,
+      pinky: 0,
+      ring: 0,
+      thumb: 0,
+      timestamp: Date.now()
+    };
+
+    // Update Firebase with the current finger states
+    function updateFirebase() {
+      database.ref('fingers').set(fingerState)
+        .then(() => {
+          console.log('Finger states updated successfully!');
+        })
+        .catch((error) => {
+          console.error('Error updating Firebase:', error);
+        });
+    }
+
+    // Function to toggle the finger state
+    function toggleFinger(finger) {
+      fingerState[finger] = fingerState[finger] === 1 ? 0 : 1;  // Toggle between 1 and 0
+      fingerState.timestamp = Date.now();  // Update the timestamp
+      updateFirebase();  // Update Firebase with new state
+    }
+
+    // Update button text based on finger state
+    function updateButtonText(finger, button) {
+      if (fingerState[finger] === 1) {
+        button.textContent = `${finger.charAt(0).toUpperCase() + finger.slice(1)} Finger: On`;
+      } else {
+        button.textContent = `${finger.charAt(0).toUpperCase() + finger.slice(1)} Finger: Off`;
+      }
+    }
+
+    // Add event listeners for each button
+    document.getElementById("indexBtn").addEventListener("click", function() {
+      toggleFinger("index");
+      updateButtonText("index", this);
+    });
+
+    document.getElementById("middleBtn").addEventListener("click", function() {
+      toggleFinger("middle");
+      updateButtonText("middle", this);
+    });
+
+    document.getElementById("pinkyBtn").addEventListener("click", function() {
+      toggleFinger("pinky");
+      updateButtonText("pinky", this);
+    });
+
+    document.getElementById("ringBtn").addEventListener("click", function() {
+      toggleFinger("ring");
+      updateButtonText("ring", this);
+    });
+
+    document.getElementById("thumbBtn").addEventListener("click", function() {
+      toggleFinger("thumb");
+      updateButtonText("thumb", this);
+    });
+
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Robotic Hand</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .toggle-container {
+      margin: 20px 0;
+    }
+    .toggle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .toggle label {
+      margin-left: 10px;
+      font-size: 18px;
+    }
+    .toggle input {
+      width: 60px;
+      height: 30px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #ddd;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+    }
+    .toggle input:checked {
+      background: #4CAF50;
+    }
+    .toggle input:before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50px;
+      background: white;
+      transition: 0.3s;
+    }
+    .toggle input:checked:before {
+      transform: translateX(30px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Control Robotic Hand</h1>
+
+  <div class="toggle-container">
+    <div class="toggle">
+      <input type="checkbox" id="indexSwitch">
+      <label for="indexSwitch">Index Finger</label>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="middleSwitch">
+      <label for="middleSwitch">Middle Finger</label>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="pinkySwitch">
+      <label for="pinkySwitch">Pinky Finger</label>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="ringSwitch">
+      <label for="ringSwitch">Ring Finger</label>
+    </div>
+    <div class="toggle">
+      <input type="checkbox" id="thumbSwitch">
+      <label for="thumbSwitch">Thumb Finger</label>
+    </div>
+  </div>
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBl0BKmGXGgPqsloA-C3N_DrrI9F1K9GF8",
+      authDomain: "iotproject-9e92f.firebaseapp.com",
+      databaseURL: "https://iotproject-9e92f-default-rtdb.firebaseio.com",
+      projectId: "iotproject-9e92f",
+      storageBucket: "iotproject-9e92f.appspot.com",
+      messagingSenderId: "528899723814",
+      appId: "1:528899723814:web:e95b3b041f0bbf3e25cce7"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Set initial state for each finger
+    let fingerState = {
+      index: 0,
+      middle: 0,
+      pinky: 0,
+      ring: 0,
+      thumb: 0,
+      timestamp: Date.now()
+    };
+
+    // Update Firebase with the current finger states
+    function updateFirebase() {
+      database.ref('fingers').set(fingerState)
+        .then(() => {
+          console.log('Finger states updated successfully!');
+        })
+        .catch((error) => {
+          console.error('Error updating Firebase:', error);
+        });
+    }
+
+    // Function to toggle the finger state
+    function toggleFinger(finger, state) {
+      fingerState[finger] = state ? 1 : 0;  // If checked, state is 1, else 0
+      fingerState.timestamp = Date.now();  // Update the timestamp
+      updateFirebase();  // Update Firebase with new state
+    }
+
+    // Add event listeners for each toggle switch
+    document.getElementById("indexSwitch").addEventListener("change", function() {
+      toggleFinger("index", this.checked);
+    });
+
+    document.getElementById("middleSwitch").addEventListener("change", function() {
+      toggleFinger("middle", this.checked);
+    });
+
+    document.getElementById("pinkySwitch").addEventListener("change", function() {
+      toggleFinger("pinky", this.checked);
+    });
+
+    document.getElementById("ringSwitch").addEventListener("change", function() {
+      toggleFinger("ring", this.checked);
+    });
+
+    document.getElementById("thumbSwitch").addEventListener("change", function() {
+      toggleFinger("thumb", this.checked);
+    });
+  </script>
+</body>
+</html>
